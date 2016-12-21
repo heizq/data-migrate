@@ -18,7 +18,7 @@ public class ImageApp {
 
     public static void main(String[] args) {
         try {
-            ForkJoinPool pool = new ForkJoinPool();
+            ForkJoinPool pool = new ForkJoinPool(2);
 
             ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:application-context.xml");
             ImageDataService imageDataService = ctx.getBean(ImageDataService.class);

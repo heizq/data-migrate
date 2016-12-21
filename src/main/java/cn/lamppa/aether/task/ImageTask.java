@@ -50,7 +50,7 @@ public class ImageTask extends RecursiveTask<List<String>> {
                     tasks.add(task);
                 } else {
                     if (checkFile(content[i].getName())) {
-                        list.add(content[i].getAbsolutePath());
+                        //list.add(content[i].getAbsolutePath());
                         imageDataService.saveImageToMongo(content[i].getAbsolutePath(),content[i].getName());
                     }
                 }

@@ -35,7 +35,7 @@ public class ServiceTest extends TestCase {
     public void testrewr()  throws Exception{
 
 
-        String id = imageDataService.getMongoId("Upload/2016/08/20/21/2016082021390401071_ST/2016082021390401071_ST.001.png");
+        String id = imageDataService.getMongoId("Upload/2016/09/21/14/2016092114304187464_ST/2016092114304187464_ST.001.jpeg");
         System.out.println(id);
     }
 

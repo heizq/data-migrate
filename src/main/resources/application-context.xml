@@ -71,13 +71,21 @@
        <tx:annotation-driven transaction-manager="transactionManager"/>
 
 
-       <!-- 'mongo' -->
-       <mongo:mongo id="mongo" host="${mongo.host}" port="${mongo.port}"/>
 
-       <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-              <constructor-arg ref="mongo"/>
-              <constructor-arg name="databaseName" value="${mongo.dbname}"/>
-       </bean>
+       <mongo:mongo-client id="mongoClient"  host="${mongo.host}" port="${mongo.port}">
+              <mongo:client-options
+                      connections-per-host="${mongo.connectionsPerHost}"
+                      threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+              />
+       </mongo:mongo-client>
+
+       <mongo:db-factory id="mongoDbFactory"
+                         dbname="${mongo.dbname}"
+                         mongo-ref="mongoClient"/>
+
+       <!-- 1.Spring提供的mongodb操作模板-->
+       <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" write-concern="NORMAL"/>
+
 
 
        <!-- Redis 配置 -->
