@@ -33,13 +33,13 @@ dependencies {
     compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.3.0'
 
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.7.2.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.7.5.RELEASE'
 
     compile group: 'com.dyuproject.protostuff', name: 'protostuff-core', version: '1.0.10'
     compile group: 'com.dyuproject.protostuff', name: 'protostuff-runtime', version: '1.0.10'
 
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
-    compile group: 'com.google.guava', name: 'guava', version: '19.0'
+    compile group: 'com.google.guava', name: 'guava', version: '20.0'
 
     compile 'com.zaxxer:HikariCP:2.4.7'
     runtime "mysql:mysql-connector-java:5.1.38"
